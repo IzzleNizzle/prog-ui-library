@@ -1,11 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student-Loans Dev-Environment</title>
 </head>
+
 <body>
-    <iframe src="./test" frameborder="0"></iframe>
+
+    <!-- LiveServer requires a head and body tag in order to work... -->
+    <script src="https://www.lexingtonlaw.com/content/dam/lexington-law/assets/js/jquery-2.2.0.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://www.creditrepair.com/content/dam/credit-repair/common/css/normalize.css">
+    <link rel="stylesheet" href="../less/dist/student-loans.css"> -->
+
+    <div style="padding-top: 50px;">
+        <div magic-include-html="./test.html"></div>
+    </div>
+
+    <!-- Dynamically loads html snippet into page -->
+    <script>
+        function loadPage() {
+            return new Promise((res, err) => {
+                var z, i, elmnt, file, xhttp;
+                /* Loop through a collection of all HTML elements: */
+                z = document.getElementsByTagName("*");
+                for (i = 0; i < z.length; i++) {
+                    elmnt = z[i];
+                    /*search for elements with a certain atrribute:*/
+                    file = elmnt.getAttribute("magic-include-html");
+                    if (file) {
+                        /* Make an HTTP request using the attribute value as the file name: */
+                        xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function () {
+                            if (this.readyState == 4) {
+                                if (this.status == 200) {
+                                    elmnt.innerHTML = this.responseText;
+                                }
+                                if (this.status == 404) {
+                                    elmnt.innerHTML = "Page not found.";
+                                }
+                                /* Remove the attribute, and call this function once more: */
+                                elmnt.removeAttribute("magic-include-html");
+                                includeHTML();
+                            }
+                        }
+                        xhttp.open("GET", file, true);
+                        xhttp.send();
+                        /* Exit the function: */
+                        return;
+                    }
+                }
+                res()
+            })
+        }
+
+        async function includeHTML() {
+
+            await loadPage()
+
+            // scriptArray.forEach(scr => {
+            //     // Get the first script element on the page
+            //     var ref = document.getElementsByTagName('script')[0];
+
+            //     // Create a new script element
+            //     var script = document.createElement('script');
+
+            //     // Set the script element `src`
+            //     script.src = scr;
+
+            //     // Inject the script into the DOM
+            //     ref.parentNode.insertBefore(script, ref);
+            // })
+
+
+
+        }
+
+        // JS Files Loading after HTML Loads
+        let izJs = '../js/student-loan-refi-calculator.js'
+        let scriptArray = [izJs]
+
+        includeHTML()
+    </script>
+
 </body>
+
 </html>
