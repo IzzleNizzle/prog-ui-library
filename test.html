@@ -1,0 +1,177 @@
+<style>
+    .call-now-cta {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 300;
+  padding: 15px 50px;
+  background-color: #1fd4cd;
+  border: 2px solid #1fd4c6;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.call-now-cta:before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 95px);
+  left: 47.5px;
+  height: 2px;
+  bottom: 9px;
+  background-color: #ffffff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -ms-trasition: all 300ms ease-in-out;
+}
+.call-now-cta:hover:before,
+.call-now-cta:focus:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -ms-transform: scaleX(1);
+}
+.call-now-cta:hover,
+.call-now-cta:focus {
+  background-color: #074768;
+  border-color: #107b8b;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 500px) {
+  .call-now-cta {
+    padding: 14px 20px;
+  }
+  .call-now-cta:before {
+    width: calc(100% - 38px);
+    left: 19px;
+  }
+}
+@media (max-width: 376px) {
+  .call-now-cta {
+    font-size: 16px;
+  }
+}
+.prog-button {
+  box-sizing: content-box;
+  text-align: center;
+  width: 250px;
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 300;
+  padding: 15px 50px;
+  background-color: #1fd4cd;
+  border: 2px solid #1fd4c6;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.prog-button .underline {
+  display: inline-block;
+  position: relative;
+}
+.prog-button .underline:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -3px;
+  background-color: #ffffff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -ms-trasition: all 300ms ease-in-out;
+}
+.prog-button:hover .underline:before,
+.prog-button:focus .underline:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -ms-transform: scaleX(1);
+}
+.prog-button:hover,
+.prog-button:focus {
+  background-color: #074768;
+  border-color: #107b8b;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 500px) {
+  .prog-button {
+    padding: 14px 20px;
+  }
+  .prog-button:before {
+    width: calc(100% - 38px);
+    left: 19px;
+  }
+}
+@media (max-width: 376px) {
+  .prog-button {
+    font-size: 16px;
+  }
+}
+
+</style>
+<!-- Normal settings for the button -->
+<h2>Normal settings for the button</h2>
+<div class="normal">
+
+  <div class="display">
+
+    <a class="lex-cta-number call-now-cta" data-unique="graph-content-lex-cta" href="tel:1-855-255-0139">Call 1-
+      <span class="lexingtonPhoneNumber phoneNumber">855-255-0139</span>
+    </a>
+
+  </div>
+
+  <div class="display">
+    <a class="lex-cta-number call-now-cta">
+      Testing content
+    </a>
+  </div>
+
+  <div class="display">
+    <button class="lex-cta-number call-now-cta">Button</button>
+  </div>
+
+</div>
+
+<!-- Set width buttons  -->
+<h2>Set width buttons</h2>
+<div class="set-width">
+
+  <div class="display">
+
+    <a class="prog-button" data-unique="graph-content-lex-cta" href="tel:1-855-255-0139">
+      <div class="underline">
+        Call 1-
+        <span class="lexingtonPhoneNumber phoneNumber">855-255-0139</span></div>
+    </a>
+
+  </div>
+
+  <div class="display">
+    <a class="prog-button">
+      <div class="underline">
+        Testing content
+      </div>
+    </a>
+  </div>
+
+  <div class="display">
+    <button class="prog-button">
+      <div class="underline">
+        Button
+        <div>
+    </button>
+  </div>
+
+</div>
