@@ -7,14 +7,63 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prog UI Component Library</title>
     <link rel="stylesheet" href="https://www.creditrepair.com/content/dam/credit-repair/common/css/normalize.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/an-old-hope  .min.css"> -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css" /> -->
     <script src="https://www.creditrepair.com/content/dam/lexington-law/assets/js/jquery-2.2.0.min.js"></script>
 </head>
 
 <body>
+    <style>
+        body {
+            display: flex;
+        }
 
-    <div style="padding-top: 50px;">
-        <div magic-include-html="./components/lex-buttons.html" />
-    </div>
+        section.left-sidebar {
+            background-color: orchid;
+            height: 100vh;
+            width: 225px;
+            overflow-y: scroll;
+        }
+
+        section.left-sidebar a {
+            display: block;
+            margin: 15px 0;
+        }
+
+        .main-container {
+            width: 100%;
+        }
+
+        nav {
+            padding: 15px;
+        }
+
+        .main {
+            padding: 5px;
+        }
+    </style>
+
+    <section class="left-sidebar">
+        <a>LexingtonLaw</a>
+        <a>Carousel</a>
+        <a>CreditRepair</a>
+        <a>Credit.com</a>
+    </section>
+    <section class="main-container">
+        <!-- Update component title -->
+        <nav>Lex - Buttons</nav>
+        <section class="main">
+            <div class="content">
+                <div style="padding-top: 50px;">
+                    <!-- Update component url -->
+                    <div magic-include-html="./components/lex-buttons.html"></div>
+                    <pre class="prettyprint"></pre>
+
+                </div>
+            </div>
+        </section>
+    </section>
 
     <!-- Dynamically loads html snippet into page -->
     <script>
@@ -34,6 +83,7 @@
                             if (this.readyState == 4) {
                                 if (this.status == 200) {
                                     elmnt.innerHTML = this.responseText;
+                                    document.querySelector('pre.prettyprint').textContent = this.responseText;
                                 }
                                 if (this.status == 404) {
                                     elmnt.innerHTML = "Page not found.";
@@ -81,6 +131,10 @@
 
         includeHTML()
     </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 </body>
 
